@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { events, eventFilters } from '@/lib/institucional-data';
+import { events, eventFilters, COMMUNITY_URL } from '@/lib/institucional-data';
 
 export default function Eventos() {
   const [filter, setFilter] = useState<(typeof eventFilters)[number]>('Todos');
@@ -190,6 +190,48 @@ export default function Eventos() {
             </div>
           </article>
         ))}
+      </div>
+
+      {/* Chamada para o histórico completo no GDG Community (Bevy) */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 14,
+          marginTop: 44,
+          textAlign: 'center'
+        }}
+      >
+        <p
+          style={{
+            margin: 0,
+            fontSize: 15,
+            lineHeight: 1.55,
+            color: 'rgba(22,22,27,.6)',
+            maxWidth: 460
+          }}
+        >
+          Estas são só algumas edições. Veja o histórico completo, fotos e os
+          próximos encontros no nosso GDG Community.
+        </p>
+        <a
+          href={COMMUNITY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '15px 30px',
+            borderRadius: 999,
+            background: '#16161b',
+            color: '#fff',
+            font: "700 14.5px var(--font-figtree)"
+          }}
+        >
+          Ver todas as edições no GDG Community →
+        </a>
       </div>
     </motion.section>
   );
