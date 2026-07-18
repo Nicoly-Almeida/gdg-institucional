@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f5f4f0;font-family:'Figtree',system-ui,sans-serif;color:#16161b;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:#1a73e8}
+::selection{background:rgba(66,133,244,.22)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes logopop{0%{opacity:0;transform:scale(.82)}60%{transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@keyframes aurapulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.6;transform:scale(1.08)}}
+</style>
+</helmet>
+
+<div ref="{{ setRoot }}" id="top" style="overflow-x:hidden;position:relative">
+
+  <!-- ===================== SMOKY COLOR AMBIENT ===================== -->
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none">
+    <div style="position:absolute;top:640px;left:-160px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(66,133,244,.30),transparent 62%);filter:blur(44px);animation:floaty 13s ease-in-out infinite"></div>
+    <div style="position:absolute;top:1120px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(234,67,53,.24),transparent 62%);filter:blur(48px);animation:floaty 16s ease-in-out infinite"></div>
+    <div style="position:absolute;top:1780px;left:4%;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(251,188,4,.22),transparent 62%);filter:blur(50px);animation:aurapulse 9s ease-in-out infinite"></div>
+    <div style="position:absolute;top:2420px;right:2%;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(52,168,83,.26),transparent 62%);filter:blur(46px);animation:floaty 15s ease-in-out infinite"></div>
+    <div style="position:absolute;top:3080px;left:-130px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(66,133,244,.22),transparent 62%);filter:blur(48px);animation:aurapulse 11s ease-in-out infinite"></div>
+    <div style="position:absolute;top:3620px;right:8%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(234,67,53,.2),transparent 62%);filter:blur(50px);animation:floaty 14s ease-in-out infinite"></div>
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <nav style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:15px 44px;background:rgba(245,244,240,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.07)">
+    <a href="#top" style="display:flex;align-items:center;gap:12px">
+      <img src="assets/gdg-jp-logo-black.png" alt="GDG João Pessoa" style="height:34px;width:auto;object-fit:contain;transition:transform .25s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+    </a>
+    <div style="display:flex;align-items:center;gap:30px;font:600 13.5px/1 'Figtree';color:rgba(22,22,27,.7)">
+      <a href="#sobre">Sobre</a>
+      <a href="#proximo">Próximo evento</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#comunidade">Comunidade</a>
+      <a href="#comunidade" style="display:flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;background:#16161b;color:#fff;font-weight:700">Participar</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header style="position:relative;padding:96px 0 84px;overflow:hidden">
+    <div style="position:absolute;top:-90px;right:8%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(66,133,244,.16),transparent 62%);animation:floaty 10s ease-in-out infinite"></div>
+    <div style="position:absolute;top:120px;right:26%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(52,168,83,.13),transparent 62%);animation:floaty 12s ease-in-out infinite"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px" data-reveal>
+      <div style="min-width:0">
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid rgba(0,0,0,.12);border-radius:999px;font:600 11.5px/1 'IBM Plex Mono';letter-spacing:1.5px;text-transform:uppercase;color:rgba(22,22,27,.7);margin-bottom:30px">
+          <span style="display:inline-flex;gap:3px"><span style="width:7px;height:7px;border-radius:50%;background:#4285F4"></span><span style="width:7px;height:7px;border-radius:50%;background:#EA4335"></span><span style="width:7px;height:7px;border-radius:50%;background:#FBBC04"></span><span style="width:7px;height:7px;border-radius:50%;background:#34A853"></span></span>
+          Comunidade oficial · João Pessoa — PB
+        </div>
+        <h1 style="margin:0;font:800 54px/1.02 'Sora';letter-spacing:-2px">Tecnologia que nasce <span style="color:#4285F4">na</span> <span style="color:#EA4335">comu</span><span style="color:#FBBC04">ni</span><span style="color:#34A853">dade.</span></h1>
+        <p style="margin:28px 0 0;max-width:540px;font-size:19px;line-height:1.6;color:rgba(22,22,27,.66)">O Google Developer Groups João Pessoa reúne pessoas que aprendem, ensinam e constroem juntas. Meetups, workshops, study jams e o maior evento de tech da Paraíba — o DevFest.</p>
+        <div style="display:flex;gap:14px;margin-top:38px;flex-wrap:wrap">
+          <a href="#proximo" style="padding:16px 32px;border-radius:999px;background:#16161b;color:#fff;font:700 15px 'Figtree'">Ver próximo evento →</a>
+          <a href="#eventos" style="padding:16px 30px;border-radius:999px;border:1px solid rgba(0,0,0,.16);font:600 15px 'Figtree'">Explorar edições</a>
+        </div>
+      </div>
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;padding:24px 28px">
+        <div style="position:absolute;inset:-30px -20px;border-radius:999px;background:conic-gradient(from 0deg,#4285F4,#EA4335,#FBBC04,#34A853,#4285F4);filter:blur(52px);opacity:.5;animation:spin 12s linear infinite,aurapulse 5s ease-in-out infinite"></div>
+        <div style="position:absolute;inset:10px 30px;border-radius:999px;background:conic-gradient(from 180deg,#34A853,#4285F4,#EA4335,#FBBC04,#34A853);filter:blur(26px);opacity:.4;animation:spin 8s linear infinite reverse"></div>
+        <div style="position:relative;animation:floaty 6s ease-in-out infinite">
+          <img src="assets/gdg-jp-logo-black.png" alt="GDG João Pessoa" style="display:block;height:92px;width:auto;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,.12));animation:logopop 1s cubic-bezier(.2,.8,.2,1) both">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== STATS STRIP ===================== -->
+  <section style="max-width:1180px;margin:0 auto;padding:0 44px 40px" data-reveal>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.08);border-radius:20px;overflow:hidden">
+      <div style="background:#fbfaf7;padding:30px 26px"><div style="font:800 40px/1 'Sora';color:#4285F4">8</div><div style="font:600 13px 'Figtree';color:rgba(22,22,27,.6);margin-top:10px">Anos de comunidade</div></div>
+      <div style="background:#fbfaf7;padding:30px 26px"><div style="font:800 40px/1 'Sora';color:#EA4335">60+</div><div style="font:600 13px 'Figtree';color:rgba(22,22,27,.6);margin-top:10px">Eventos realizados</div></div>
+      <div style="background:#fbfaf7;padding:30px 26px"><div style="font:800 40px/1 'Sora';color:#FBBC04">4.500</div><div style="font:600 13px 'Figtree';color:rgba(22,22,27,.6);margin-top:10px">Membros na comunidade</div></div>
+      <div style="background:#fbfaf7;padding:30px 26px"><div style="font:800 40px/1 'Sora';color:#34A853">300+</div><div style="font:600 13px 'Figtree';color:rgba(22,22,27,.6);margin-top:10px">Palestras &amp; talks</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== PRÓXIMO EVENTO (DESTAQUE) ===================== -->
+  <section id="proximo" style="max-width:1180px;margin:0 auto;padding:56px 44px 40px;scroll-margin-top:80px" data-reveal>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+      <span style="display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(52,168,83,.14);color:#1e8e3e;font:700 11px/1 'IBM Plex Mono';letter-spacing:1px;text-transform:uppercase"><span style="width:7px;height:7px;border-radius:50%;background:#34A853;box-shadow:0 0 8px #34A853"></span>Próximo evento</span>
+      <span style="font:600 13px 'IBM Plex Mono';color:rgba(22,22,27,.45)">// inscrições abertas</span>
+    </div>
+    <a href="DevFest JP Landing.dc.html" style="display:block;position:relative;overflow:hidden;border-radius:26px;background:radial-gradient(120% 130% at 15% 0%,#171728 0%,#0b0b16 60%);box-shadow:0 30px 70px -28px rgba(11,11,22,.55)">
+      <div style="position:absolute;top:-70px;left:6%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(66,133,244,.34),transparent 62%)"></div>
+      <div style="position:absolute;bottom:-90px;right:14%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(52,168,83,.26),transparent 62%)"></div>
+      <div style="position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:0">
+        <div style="padding:56px 52px">
+          <img src="assets/devfest-2026-w3.png" alt="DevFest 2026" style="height:60px;width:auto;object-fit:contain;margin-bottom:8px">
+          <div style="font:700 15px/1 'Sora';letter-spacing:7px;text-transform:uppercase;padding-left:7px;margin-bottom:26px;background:linear-gradient(90deg,#4285F4,#34A853 40%,#FBBC04 70%,#EA4335);-webkit-background-clip:text;background-clip:text;color:transparent">João Pessoa</div>
+          <h2 style="margin:0;font:800 40px/1.05 'Sora';letter-spacing:-1.5px;color:#f2f2f7">A comunidade de tecnologia<br>e inovação se encontra aqui.</h2>
+          <p style="margin:20px 0 0;max-width:440px;font-size:16px;line-height:1.6;color:rgba(242,242,247,.62)">Dois dias de palestras, código ao vivo e networking. Quatro trilhas: IA, Web, Mobile e Cloud.</p>
+          <div style="display:flex;align-items:center;gap:16px;margin-top:34px">
+            <span style="padding:15px 30px;border-radius:999px;background:linear-gradient(90deg,#4285F4,#34A853);color:#fff;font:700 15px 'Figtree'">Ver a página do evento →</span>
+            <span style="font:600 13px 'IBM Plex Mono';color:rgba(242,242,247,.6)">Lote 1 · a partir de R$ 79,99</span>
+          </div>
+        </div>
+        <div style="position:relative;border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:center;gap:22px;padding:56px 48px">
+          <div style="display:flex;align-items:center;gap:16px"><div style="width:52px;height:52px;border-radius:14px;background:rgba(66,133,244,.16);display:flex;align-items:center;justify-content:center;font-size:24px">📅</div><div><div style="font:800 22px/1 'Sora';color:#f2f2f7">20 &amp; 21 Nov 2026</div><div style="font:600 12px 'IBM Plex Mono';color:rgba(242,242,247,.5);margin-top:6px">Quinta e sexta</div></div></div>
+          <div style="display:flex;align-items:center;gap:16px"><div style="width:52px;height:52px;border-radius:14px;background:rgba(52,168,83,.16);display:flex;align-items:center;justify-content:center;font-size:24px">📍</div><div><div style="font:800 22px/1 'Sora';color:#f2f2f7">Uniesp</div><div style="font:600 12px 'IBM Plex Mono';color:rgba(242,242,247,.5);margin-top:6px">João Pessoa · PB</div></div></div>
+          <div style="display:flex;align-items:center;gap:16px"><div style="width:52px;height:52px;border-radius:14px;background:rgba(251,188,4,.16);display:flex;align-items:center;justify-content:center;font-size:24px">🎟️</div><div><div style="font:800 22px/1 'Sora';color:#f2f2f7">1.200 vagas</div><div style="font:600 12px 'IBM Plex Mono';color:rgba(242,242,247,.5);margin-top:6px">5ª edição</div></div></div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ===================== EVENTOS (VITRINE) ===================== -->
+  <section id="eventos" style="max-width:1180px;margin:0 auto;padding:56px 44px 40px;scroll-margin-top:80px" data-reveal>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+      <div>
+        <div style="font:600 12px/1 'IBM Plex Mono';letter-spacing:2px;text-transform:uppercase;color:#1a73e8;margin-bottom:14px">// Nossas edições</div>
+        <h2 style="margin:0;font:800 44px/1.05 'Sora';letter-spacing:-1.5px">Eventos que já aconteceram</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ chips }}" as="c" hint-placeholder-count="5">
+          <sc-if value="{{ c.active }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ c.onClick }}" style="padding:9px 16px;border-radius:999px;font:700 12.5px 'Figtree';cursor:pointer;transition:all .18s;background:#16161b;color:#fff;border:1px solid #16161b">{{ c.label }}</button>
+          </sc-if>
+          <sc-if value="{{ c.inactive }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ c.onClick }}" style="padding:9px 16px;border-radius:999px;font:700 12.5px 'Figtree';cursor:pointer;transition:all .18s;background:transparent;color:rgba(22,22,27,.66);border:1px solid rgba(0,0,0,.14)">{{ c.label }}</button>
+          </sc-if>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <sc-for list="{{ events }}" as="ev" hint-placeholder-count="6">
+        <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)">
+          <div style="position:relative;aspect-ratio:16/10;background:{{ ev.thumb }};display:flex;align-items:flex-end;padding:16px">
+            <span style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.9);font:700 11px/1 'IBM Plex Mono';letter-spacing:.5px;color:{{ ev.color }}">{{ ev.type }}</span>
+            <span style="font:500 11px 'IBM Plex Mono';color:rgba(255,255,255,.85)">{{ ev.photo }}</span>
+          </div>
+          <div style="padding:22px 22px 24px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <div style="font:700 20px/1.15 'Sora'">{{ ev.title }}</div>
+              <span style="font:600 12px 'IBM Plex Mono';color:rgba(22,22,27,.45);white-space:nowrap">{{ ev.date }}</span>
+            </div>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.55;color:rgba(22,22,27,.6)">{{ ev.blurb }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,.07)">
+              <span style="font:600 12.5px 'Figtree';color:rgba(22,22,27,.55)">{{ ev.attendees }}</span>
+              <span style="font:700 13px 'Figtree';color:#1a73e8">Retrospectiva →</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== FORMATOS ===================== -->
+  <section id="sobre" style="max-width:1180px;margin:0 auto;padding:70px 44px 40px;scroll-margin-top:80px" data-reveal>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+      <div>
+        <div style="font:600 12px/1 'IBM Plex Mono';letter-spacing:2px;text-transform:uppercase;color:#1a73e8;margin-bottom:14px">// Sobre a comunidade</div>
+        <h2 style="margin:0;font:800 42px/1.06 'Sora';letter-spacing:-1.5px">Aprender fazendo,<br>junto com gente real.</h2>
+        <p style="margin:24px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,22,27,.66)">Somos parte da rede global de Google Developer Groups — comunidades independentes que conectam pessoas interessadas em tecnologias Google e desenvolvimento de software. Em João Pessoa, promovemos encontros gratuitos, abertos e para todos os níveis.</p>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:rgba(22,22,27,.66)">Do estudante curioso ao profissional sênior, aqui todo mundo tem espaço pra aprender, palestrar e crescer.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="padding:26px 22px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px"><div style="font-size:26px">🎤</div><div style="font:700 16px 'Sora';margin-top:14px">Meetups</div><div style="font-size:13px;color:rgba(22,22,27,.6);margin-top:6px;line-height:1.5">Encontros mensais com talks e trocas.</div></div>
+        <div style="padding:26px 22px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px"><div style="font-size:26px">🧑‍💻</div><div style="font:700 16px 'Sora';margin-top:14px">Study Jams</div><div style="font-size:13px;color:rgba(22,22,27,.6);margin-top:6px;line-height:1.5">Estudo guiado em grupo, mão na massa.</div></div>
+        <div style="padding:26px 22px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px"><div style="font-size:26px">🤖</div><div style="font:700 16px 'Sora';margin-top:14px">Build with AI</div><div style="font-size:13px;color:rgba(22,22,27,.6);margin-top:6px;line-height:1.5">Hands-on com IA generativa e Gemini.</div></div>
+        <div style="padding:26px 22px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px"><div style="font-size:26px">🎉</div><div style="font:700 16px 'Sora';margin-top:14px">DevFest</div><div style="font-size:13px;color:rgba(22,22,27,.6);margin-top:6px;line-height:1.5">Nosso evento anual, o maior da PB.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMUNIDADE / CTA ===================== -->
+  <section id="comunidade" style="max-width:1180px;margin:0 auto;padding:56px 44px 90px;scroll-margin-top:80px" data-reveal>
+    <div style="position:relative;overflow:hidden;border-radius:26px;background:#fff;border:1px solid rgba(0,0,0,.08);padding:64px 52px;text-align:center">
+      <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#4285F4,#EA4335 33%,#FBBC04 66%,#34A853)"></div>
+      <h2 style="margin:0;font:800 44px/1.05 'Sora';letter-spacing:-1.5px;max-width:640px;margin-inline:auto">Faça parte da maior comunidade dev da Paraíba</h2>
+      <p style="margin:20px auto 0;max-width:520px;font-size:16.5px;line-height:1.6;color:rgba(22,22,27,.64)">Participe dos próximos encontros, receba novidades e conecte-se com quem constrói tecnologia por aqui. É de graça.</p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap">
+        <a href="#" style="padding:16px 32px;border-radius:999px;background:#16161b;color:#fff;font:700 15px 'Figtree'">Entrar na comunidade</a>
+        <a href="#" style="padding:16px 30px;border-radius:999px;border:1px solid rgba(0,0,0,.16);font:600 15px 'Figtree'">Seguir no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="border-top:1px solid rgba(0,0,0,.08);padding:52px 44px 40px;background:#fbfaf7">
+    <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+      <div style="max-width:340px">
+        <img src="assets/gdg-jp-logo-black.png" alt="GDG João Pessoa" style="height:38px;width:auto;margin-bottom:18px">
+        <p style="font-size:14px;line-height:1.6;color:rgba(22,22,27,.55);margin:0">Google Developer Groups João Pessoa — comunidade independente de desenvolvedores. Not affiliated with Google LLC opinions.</p>
+      </div>
+      <div style="display:flex;gap:56px;flex-wrap:wrap">
+        <div><div style="font:700 12px/1 'IBM Plex Mono';letter-spacing:1px;text-transform:uppercase;color:rgba(22,22,27,.45);margin-bottom:16px">Navegar</div><div style="display:flex;flex-direction:column;gap:11px;font-size:14px;color:rgba(22,22,27,.72)"><a href="#sobre">Sobre</a><a href="#proximo">Próximo evento</a><a href="#eventos">Eventos</a><a href="#comunidade">Comunidade</a></div></div>
+        <div><div style="font:700 12px/1 'IBM Plex Mono';letter-spacing:1px;text-transform:uppercase;color:rgba(22,22,27,.45);margin-bottom:16px">Social</div><div style="display:flex;flex-direction:column;gap:11px;font-size:14px;color:rgba(22,22,27,.72)"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Meetup</a><a href="#">YouTube</a></div></div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 12px 'IBM Plex Mono';color:rgba(22,22,27,.4)">
+      <span>© 2026 GDG João Pessoa</span>
+      <span>Feito com ☕ em João Pessoa — PB</span>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'Todos' };
+
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      if (!this._root) return;
+      const els = this._root.querySelectorAll('[data-reveal]');
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+      });
+      const io = new IntersectionObserver((ents) => {
+        ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      els.forEach(el => io.observe(el));
+    });
+  }
+
+  renderVals() {
+    const stripe = (c1, c2) => `linear-gradient(135deg,${c1},${c2})`;
+    const all = [
+      { title: 'DevFest 2025', type: 'DevFest', date: 'Nov 2025', date_k: 2025, blurb: 'A 4ª edição reuniu a comunidade com trilhas de IA, Web e Mobile e recorde de público.', attendees: '900+ participantes', color: '#1a73e8', c1: '#3b6fd4', c2: '#1e8e3e' },
+      { title: 'Build with AI 2025', type: 'Build with AI', date: 'Ago 2025', date_k: 2025, blurb: 'Workshop hands-on de IA generativa com Gemini e casos práticos de aplicação.', attendees: '180 participantes', color: '#d93025', c1: '#d93025', c2: '#f9ab00' },
+      { title: 'Google I/O Extended 2025', type: 'I/O Extended', date: 'Mai 2025', date_k: 2025, blurb: 'As novidades do Google I/O revividas localmente, com watch party e debates.', attendees: '320 participantes', color: '#1e8e3e', c1: '#1e8e3e', c2: '#3b6fd4' },
+      { title: 'DevFest 2024', type: 'DevFest', date: 'Nov 2024', date_k: 2024, blurb: 'Dois palcos, codelabs e a energia de sempre — nossa maior edição até então.', attendees: '750 participantes', color: '#1a73e8', c1: '#f9ab00', c2: '#d93025' },
+      { title: 'Android Study Jams 2024', type: 'Study Jams', date: 'Set 2024', date_k: 2024, blurb: 'Trilha de estudos guiados de Android com Kotlin, do zero ao primeiro app.', attendees: '140 participantes', color: '#f9ab00', c1: '#1e8e3e', c2: '#f9ab00' },
+      { title: 'Google I/O Extended 2024', type: 'I/O Extended', date: 'Mai 2024', date_k: 2024, blurb: 'Comunidade reunida para acompanhar e destrinchar os anúncios do I/O.', attendees: '260 participantes', color: '#1e8e3e', c1: '#3b6fd4', c2: '#d93025' },
+    ];
+    const events = all
+      .filter(e => this.state.filter === 'Todos' || e.type === this.state.filter)
+      .map(e => ({ ...e, thumb: stripe(e.c1, e.c2), photo: '[ foto · ' + e.title + ' ]' }));
+
+    const types = ['Todos', 'DevFest', 'I/O Extended', 'Build with AI', 'Study Jams'];
+    const chips = types.map(t => ({
+      label: t,
+      active: this.state.filter === t,
+      inactive: this.state.filter !== t,
+      onClick: () => this.setState({ filter: t }),
+    }));
+
+    return { setRoot: el => { this._root = el; }, events, chips };
+  }
+}
+</script>
+</body>
+</html>
