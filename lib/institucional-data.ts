@@ -10,6 +10,9 @@ export const DEVFEST_URL = 'https://devfest.gdgjoaopessoa.com.br';
 /** Página da comunidade no GDG Community, com o histórico de edições. */
 export const COMMUNITY_URL = 'https://gdg.community.dev/gdg-joao-pessoa/';
 
+/** Grupo de WhatsApp da comunidade — botão "Entrar na comunidade". */
+export const WHATSAPP_URL = 'https://chat.whatsapp.com/J3ODSBuGRVa6373CaHm6Dv';
+
 // ----- Stats strip -----
 export type Stat = { value: string; label: string; color: string };
 

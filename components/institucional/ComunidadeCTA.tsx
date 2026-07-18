@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import { WHATSAPP_URL } from '@/lib/institucional-data';
 
 export default function ComunidadeCTA() {
   return (
@@ -67,7 +68,9 @@ export default function ComunidadeCTA() {
           }}
         >
           <a
-            href="#"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               padding: '16px 32px',
               borderRadius: 999,
