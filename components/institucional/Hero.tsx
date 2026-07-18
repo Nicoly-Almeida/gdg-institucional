@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Reveal from './Reveal';
 import logo from '@/public/assets/gdg-jp-logo-black.png';
-import { COMMUNITY_URL } from '@/lib/institucional-data';
+import { COMMUNITY_URL, DEVFEST_URL } from '@/lib/institucional-data';
 
 export default function Hero() {
   return (
@@ -98,7 +98,9 @@ export default function Hero() {
 
           <div style={{ display: 'flex', gap: 14, marginTop: 38, flexWrap: 'wrap' }}>
             <a
-              href="#proximo"
+              href={DEVFEST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 padding: '16px 32px',
                 borderRadius: 999,

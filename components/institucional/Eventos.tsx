@@ -212,8 +212,8 @@ export default function Eventos() {
             maxWidth: 460
           }}
         >
-          Estas são só algumas edições. Veja o histórico completo, fotos e os
-          próximos encontros no nosso GDG Community.
+          Estas são só algumas edições. Veja todos os eventos que já aconteceram,
+          com fotos e detalhes, na nossa página do GDG Community.
         </p>
         <a
           href={COMMUNITY_URL}
@@ -230,7 +230,7 @@ export default function Eventos() {
             font: "700 14.5px var(--font-figtree)"
           }}
         >
-          Ver todas as edições no GDG Community →
+          Ver todos os eventos que já aconteceram →
         </a>
       </div>
     </motion.section>

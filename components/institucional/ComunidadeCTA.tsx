@@ -1,5 +1,5 @@
 import Reveal from './Reveal';
-import { WHATSAPP_URL } from '@/lib/institucional-data';
+import { WHATSAPP_URL, INSTAGRAM_URL } from '@/lib/institucional-data';
 
 export default function ComunidadeCTA() {
   return (
@@ -82,7 +82,9 @@ export default function ComunidadeCTA() {
             Entrar na comunidade
           </a>
           <a
-            href="#"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               padding: '16px 30px',
               borderRadius: 999,

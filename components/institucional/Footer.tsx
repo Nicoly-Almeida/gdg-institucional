@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import logo from '@/public/assets/gdg-jp-logo-black.png';
+import { INSTAGRAM_URL } from '@/lib/institucional-data';
 
 const navegar = [
   { href: '#sobre', label: 'Sobre' },
@@ -9,10 +10,9 @@ const navegar = [
 ];
 
 const social = [
-  { href: '#', label: 'Instagram' },
-  { href: '#', label: 'LinkedIn' },
-  { href: '#', label: 'Meetup' },
-  { href: '#', label: 'YouTube' }
+  { href: INSTAGRAM_URL, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/company/gdgjoaopessoa/', label: 'LinkedIn' },
+  { href: 'https://www.youtube.com/@GdgJpOrgBr/featured', label: 'YouTube' }
 ];
 
 export default function Footer() {
@@ -113,11 +113,18 @@ function FooterCol({
           color: 'rgba(22,22,27,.72)'
         }}
       >
-        {links.map((l) => (
-          <a key={l.label} href={l.href}>
-            {l.label}
-          </a>
-        ))}
+        {links.map((l) => {
+          const isExternal = /^https?:\/\//.test(l.href);
+          return (
+            <a
+              key={l.label}
+              href={l.href}
+              {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              {l.label}
+            </a>
+          );
+        })}
       </div>
     </div>
   );
