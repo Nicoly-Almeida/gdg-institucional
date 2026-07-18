@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <StatsStrip />
       <ProximoEvento />
-      <Eventos />
+      {/* <Eventos /> */}
       <Sobre />
       <ComunidadeCTA />
       <Footer />
