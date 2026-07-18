@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Reveal from './Reveal';
 import logo from '@/public/assets/gdg-jp-logo-black.png';
+import { COMMUNITY_URL } from '@/lib/institucional-data';
 
 export default function Hero() {
   return (
@@ -109,7 +110,9 @@ export default function Hero() {
               Ver próximo evento →
             </a>
             <a
-              href="#eventos"
+              href={COMMUNITY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 padding: '16px 30px',
                 borderRadius: 999,

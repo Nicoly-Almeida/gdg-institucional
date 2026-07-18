@@ -101,7 +101,7 @@ Grid de 4 colunas com hairlines (borda + `gap:1px` sobre `rgba(0,0,0,.08)`, card
 - Cabeçalho: pill verde **"Próximo evento"** (dot com glow) + `// inscrições abertas` (mono).
 - **Card escuro** (contraste no site claro) `border-radius:26px`, fundo `radial-gradient(120% 130% at 15% 0%,#171728,#0b0b16 60%)`, sombra forte, com blobs azul/verde internos. **O card inteiro é um link para a rota da landing do DevFest** (`/devfest-2026`).
 - Grid interno `1.1fr .9fr`:
-  - Esquerda: logo `devfest-2026-w3.png` (h 60px, branca) + wordmark "JOÃO PESSOA" (Sora 700, letter-spacing 7px, gradiente GDG) + H2 branca "A comunidade de tecnologia e inovação se encontra aqui." + parágrafo + CTA pill gradiente **"Ver a página do evento →"** + nota "Lote 1 · a partir de R$ 79,99".
+  - Esquerda: logo `devfest-2026-w3.png` (h 60px, branca) + wordmark "JOÃO PESSOA" (Sora 700, letter-spacing 7px, gradiente GDG) + H2 branca "A comunidade de tecnologia e inovação se encontra aqui." + parágrafo + CTA pill gradiente **"Ver a página do evento →"** + nota "Lote 1 · a partir de R$ 99,99".
   - Direita (borda esquerda hairline clara): 3 linhas ícone+texto — 📅 **20 & 21 Nov 2026** / Quinta e sexta · 📍 **Uniesp** / João Pessoa · PB · 🎟️ **1.200 vagas** / 5ª edição.
 
 ### 5. Eventos — vitrine (`#eventos`)
@@ -141,7 +141,7 @@ Fundo `#fbfaf7`, borda superior. Logo `gdg-jp-logo-black.png` (h 38px) + descri�
   - **Android Study Jams 2024** · Set 2024 · 140 · "Trilha de estudos guiados de Android com Kotlin, do zero ao primeiro app."
   - **Google I/O Extended 2024** · Mai 2024 · 260 · "Comunidade reunida para acompanhar e destrinchar os anúncios do I/O."
 - `filter`: estado (`'Todos'` default). `'Todos'` mostra todos; senão filtra por `type`.
-- `próximo evento`: dados fixos do DevFest 2026 (20–21 Nov, Uniesp, 1.200 vagas, lote a partir de R$ 79,99) + link para `/devfest-2026`.
+- `próximo evento`: dados fixos do DevFest 2026 (20–21 Nov, Uniesp, 1.200 vagas, lote a partir de R$ 99,99) + link para `/devfest-2026`.
 
 ## Relação com a landing do DevFest
 Este site e a **landing do DevFest 2026** (handoff separado) formam **um único app Next**. O card de destaque em *Próximo evento* deve linkar para a rota da landing (`/devfest-2026`). Compartilhar `layout.tsx`, fontes e a pasta `public/assets/`. O **banner de divulgação** (1280×575, também no outro handoff) pode virar rota `/banner` e/ou a OG image do site via `next/og`.

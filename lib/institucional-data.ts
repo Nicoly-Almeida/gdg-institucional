@@ -7,27 +7,30 @@
  */
 export const DEVFEST_URL = 'https://devfest.gdgjoaopessoa.com.br';
 
+/** Página da comunidade no GDG Community, com o histórico de edições. */
+export const COMMUNITY_URL = 'https://gdg.community.dev/gdg-joao-pessoa/';
+
 // ----- Stats strip -----
 export type Stat = { value: string; label: string; color: string };
 
 export const stats: Stat[] = [
-  { value: '8', label: 'Anos de comunidade', color: '#4285F4' },
+  { value: '9', label: 'Anos de comunidade', color: '#4285F4' },
   { value: '60+', label: 'Eventos realizados', color: '#EA4335' },
-  { value: '4.500', label: 'Membros na comunidade', color: '#FBBC04' },
+  { value: '600', label: 'Membros na comunidade', color: '#FBBC04' },
   { value: '300+', label: 'Palestras & talks', color: '#34A853' }
 ];
 
 // ----- Próximo evento (DevFest 2026) -----
 export const proximoEvento = {
   href: DEVFEST_URL,
-  lote: 'Lote 1 · a partir de R$ 79,99',
+  lote: 'Lote 1 · a partir de R$ 99,99',
   titulo: ['A comunidade de tecnologia', 'e inovação se encontra aqui.'],
   descricao:
     'Dois dias de palestras, código ao vivo e networking. Quatro trilhas: IA, Web, Mobile e Cloud.',
   info: [
     { icon: '📅', tint: 'rgba(66,133,244,.16)', main: '20 & 21 Nov 2026', sub: 'Quinta e sexta' },
     { icon: '📍', tint: 'rgba(52,168,83,.16)', main: 'Uniesp', sub: 'João Pessoa · PB' },
-    { icon: '🎟️', tint: 'rgba(251,188,4,.16)', main: '1.200 vagas', sub: '5ª edição' }
+    { icon: '🎟️', tint: 'rgba(251,188,4,.16)', main: '600 vagas', sub: '1ª edição' }
   ]
 };
 
